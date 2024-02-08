@@ -7,15 +7,15 @@ const monsterDataPath = './monsters.json';
 const correctMonster = {
         name: "test dummy",
         ac: 15,
-        type: "Humanoid (Goblin)",
-        size: "Small",
+        type: "construct",
+        size: "small",
         cr: "1/8",
         str: 9,
         dex: 16,
         con: 12,
         int: 8,
         wis: 11,
-        cha: 15,
+        chr: 15,
         bonusAction: true,
         legendaryAction: false
     };

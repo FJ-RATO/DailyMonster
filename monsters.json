@@ -10,7 +10,7 @@
       "con": 12,
       "int": 8,
       "wis": 11,
-      "cha": 15,
+      "chr": 15,
       "bonusAction": false,
       "legendaryAction": false
     },
@@ -25,8 +25,23 @@
         "con": 12,
         "int": 8,
         "wis": 11,
-        "cha": 15,
+        "chr": 15,
         "bonusAction": false,
+        "legendaryAction": false
+      },{"name": "elmo"},{"name": "elmo"},{"name": "elmo"},{"name": "elmo"},{"name": "elmo"},{"name": "elmo"},{"name": "elmo"},{"name": "elmo"},
+      {
+        "name": "test dummy",
+        "ac": 15,
+        "type": "construct",
+        "size": "small",
+        "cr": "1/8",
+        "str": 9,
+        "dex": 16,
+        "con": 12,
+        "int": 8,
+        "wis": 11,
+        "chr": 15,
+        "bonusAction": true,
         "legendaryAction": false
       }
   ]
