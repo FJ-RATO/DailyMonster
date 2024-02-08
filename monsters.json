@@ -1,0 +1,33 @@
+[
+    {
+      "name": "json monster",
+      "ac": 15,
+      "type": "json",
+      "size": "tiny",
+      "cr": "1/8",
+      "str": 9,
+      "dex": 16,
+      "con": 12,
+      "int": 8,
+      "wis": 11,
+      "cha": 15,
+      "bonusAction": false,
+      "legendaryAction": false
+    },
+    {
+        "name": "json monster 2",
+        "ac": 15,
+        "type": "json",
+        "size": "tiny",
+        "cr": "1/8",
+        "str": 9,
+        "dex": 16,
+        "con": 12,
+        "int": 8,
+        "wis": 11,
+        "cha": 15,
+        "bonusAction": false,
+        "legendaryAction": false
+      }
+  ]
+  
