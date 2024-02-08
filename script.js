@@ -68,21 +68,29 @@ function addMonsterToTable(monster) {
   // Populate table cells with monster data using template literals
   newRow.innerHTML = `
     <td>${monster.name}</td>
-    <td>${monster.ac}</td>
-    <td>${monster.type}</td>
-    <td>${monster.size}</td>
-    <td>${monster.cr}</td>
-    <td>${monster.str}</td>
-    <td>${monster.dex}</td>
-    <td>${monster.con}</td>
-    <td>${monster.int}</td>
-    <td>${monster.wis}</td>
-    <td>${monster.chr}</td>
-    <td>${monster.bonusAction}</td>
-    <td>${monster.legendaryAction}</td>
+    <td style="${getBackgroundColor(monster.ac, correctMonster.ac)}">${monster.ac}</td>
+    <td style="${getBackgroundColor(monster.type, correctMonster.type)}">${monster.type}</td>
+    <td style="${getBackgroundColor(monster.size, correctMonster.size)}">${monster.size}</td>
+    <td style="${getBackgroundColor(monster.cr, correctMonster.cr)}">${monster.cr}</td>
+    <td style="${getBackgroundColor(monster.str, correctMonster.str)}">${monster.str}</td>
+    <td style="${getBackgroundColor(monster.dex, correctMonster.dex)}">${monster.dex}</td>
+    <td style="${getBackgroundColor(monster.con, correctMonster.con)}">${monster.con}</td>
+    <td style="${getBackgroundColor(monster.int, correctMonster.int)}">${monster.int}</td>
+    <td style="${getBackgroundColor(monster.wis, correctMonster.wis)}">${monster.wis}</td>
+    <td style="${getBackgroundColor(monster.chr, correctMonster.chr)}">${monster.chr}</td>
+    <td style="${getBackgroundColor(monster.bonusAction, correctMonster.bonusAction)}">${monster.bonusAction}</td>
+    <td style="${getBackgroundColor(monster.legendaryAction, correctMonster.legendaryAction)}">${monster.legendaryAction}</td>
     `;
 
   tableBody.appendChild(newRow);
+}
+
+function getBackgroundColor(monsterValue, correctValue) {
+  if (monsterValue === correctValue) {
+    return 'background-color: green;';
+  } else {
+    return ''; // No background color
+  }
 }
 
 loadMonsterData(monsterDataPath)

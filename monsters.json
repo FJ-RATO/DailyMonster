@@ -16,7 +16,7 @@
     },
     {
         "name": "json monster 2",
-        "ac": 15,
+        "ac": 14,
         "type": "json",
         "size": "tiny",
         "cr": "1/8",
