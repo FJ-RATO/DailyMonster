@@ -35,6 +35,9 @@ body {
     max-height: 200px; /* Limit drop-down height */
     overflow-y: auto; /* Enable scrolling if needed */
     display: none; /* Initially hide suggestions */
+    top: 100%; /* Position below the input field */
+    transform: translateX(-50%); /* Translate horizontally by half its width */
+    width: auto;
 }
 
 #suggestions-list li {
@@ -62,3 +65,7 @@ body {
 #monster-stats th {
     background-color: #f2f2f2; /* Highlight header cells */
 }
+
+#name-input-container {
+    position: relative; /* Make the container positioned */
+  }
