@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px; /* Added padding for layout */
+}
+
+.centered-text {
+    text-align: center;
+    margin-top: 20px; /* Added margin-top for spacing */
+}
+
+.centered-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centered-list {
+    text-align: center;
+}
+
+#name-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-right: 0; /* Remove right margin */
+}
+
+#suggestions-list {
+    position: absolute; /* Position drop-down menu */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px; /* Limit drop-down height */
+    overflow-y: auto; /* Enable scrolling if needed */
+    display: none; /* Initially hide suggestions */
+}
+
+#suggestions-list li {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#suggestions-list li:hover {
+    background-color: #f2f2f2; /* Highlight on hover */
+}
+
+#monster-stats {
+    width: 100%; /* Set table width */
+    border-collapse: collapse; /* Remove cell borders */
+    border: 1px solid #ddd; /* Add table border */
+}
+
+#monster-stats th, td {
+    padding: 5px; /* Add padding to cells */
+    text-align: center; /* Center text in cells */
+    border: 1px solid #ddd; /* Add cell borders */
+}
+
+#monster-stats th {
+    background-color: #f2f2f2; /* Highlight header cells */
+}
