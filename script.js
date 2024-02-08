@@ -24,7 +24,7 @@ let currentSuggestions = [];
 let selectedMonsters = [];
 
 // Event listener click events
-nameInput.addEventListener('click', handleInput);
+nameInput.addEventListener('keyup', handleInput);
 
 function loadMonsterData(jsonPath) {
   return fetch(jsonPath)
@@ -37,28 +37,42 @@ function loadMonsterData(jsonPath) {
 
 function handleInput() {
   const inputValue = this.value.toLowerCase();
-
-  // Filter monster names starting with the input
+  
   currentSuggestions = monsterData.filter(monster => monster.name.toLowerCase().startsWith(inputValue));
+  
+  suggestionsList.innerHTML = '';
 
-  // Handle empty suggestions
-  if (currentSuggestions.length === 0) {
-    suggestionsList.style.display = 'none';
-  } else {
-    // Clear and rebuild suggestions list
-    suggestionsList.innerHTML = '';
+  if (currentSuggestions.length > 0) {
+    suggestionsList.style.display = 'block';
+
+    // Loop through suggestions
     currentSuggestions.forEach(monster => {
       const suggestionItem = document.createElement('li');
       suggestionItem.textContent = monster.name;
+
+      // Highlight matched characters
+      const highlightedName = highlightMatchedCharacters(monster.name, inputValue);
+      suggestionItem.innerHTML = highlightedName;
+
+      // Add click event listener for each suggestion
       suggestionItem.addEventListener('click', function() {
         addMonsterToTable(monster);
         suggestionsList.style.display = 'none';
-        selectedMonsters.push(monster); // Add monster object to selected list
+        selectedMonsters.push(monster);
       });
+
+      // Add suggestion item to the list
       suggestionsList.appendChild(suggestionItem);
     });
-    suggestionsList.style.display = 'block'; // Show suggestions
+  } else {
+    // Hide suggestions list if no matches
+    suggestionsList.style.display = 'none';
   }
+}
+
+function highlightMatchedCharacters(text, searchTerm) {
+  const regex = new RegExp('(' + searchTerm.replace(/[.*+?^${}()|[\]\\]\\]\n/, '\\$&') + ')', 'gi');
+  return text.replace(regex, '<b>$&</b>'); // Wrap matched characters in bold tags
 }
 
 function addMonsterToTable(monster) {
