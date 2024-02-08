@@ -1,10 +1,10 @@
 const nameInput = document.getElementById('name-input');
 const suggestionsList = document.getElementById('suggestions-list');
 const monsterStats = document.getElementById('monster-stats');
+const monsterDataPath = './monsters.json';
 
 // read from a json in the future
-const monsterData = [
-    {
+const correctMonster = {
         name: "test dummy",
         ac: 15,
         type: "Humanoid (Goblin)",
@@ -18,14 +18,22 @@ const monsterData = [
         cha: 15,
         bonusAction: true,
         legendaryAction: false
-    }
-  ];
+    };
 
 let currentSuggestions = [];
 let selectedMonsters = [];
 
 // Event listener click events
 nameInput.addEventListener('click', handleInput);
+
+function loadMonsterData(jsonPath) {
+  return fetch(jsonPath)
+    .then(response => response.json())
+    .catch(error => {
+      console.error('Error loading JSON data:', error);
+      return []; // Return an empty array in case of errors
+    });
+}
 
 function handleInput() {
   const inputValue = this.value.toLowerCase();
@@ -76,3 +84,10 @@ function addMonsterToTable(monster) {
 
   tableBody.appendChild(newRow);
 }
+
+loadMonsterData(monsterDataPath)
+  .then(data => {
+    monsterData = data;
+    nameInput.addEventListener('click', handleInput);
+
+  });
