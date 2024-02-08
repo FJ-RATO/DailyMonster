@@ -107,6 +107,12 @@ function getBackgroundColor(monsterValue, correctValue) {
   }
 }
 
+document.addEventListener('click', function(event) {
+  if (!event.target.matches('#name-input') && !event.target.matches('#suggestions-list')) {
+    suggestionsList.style.display = 'none';
+  }
+});
+
 loadMonsterData(monsterDataPath)
   .then(data => {
     monsterData = data;
